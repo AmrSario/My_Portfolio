@@ -1,260 +1,1473 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amr Mohamed - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-color: #f8f9fa;
-      --text-color: #222;
-      --section-bg: #ffffff;
-      --accent-color: #0077cc;
-      --header-bg: linear-gradient(to right, #6dd5ed, #2193b0);
-      --footer-color: #888;
-      --btn-bg: linear-gradient(to right, #25D366, #128C7E);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Amr Mohamed Shaaban — Developer & Designer</title>
+    <meta name="description" content="Portfolio of Amr Mohamed Shaaban - Full Stack Developer, Graphic Designer, and IT Support Specialist.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
 
-    body.dark-mode {
-      --bg-color: #121212;
-      --text-color: #e4e4e4;
-      --section-bg: #1e1e1e;
-      --accent-color: #66b2ff;
-      --header-bg: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      --footer-color: #aaa;
-      --btn-bg: linear-gradient(to right, #128C7E, #075E54);
-    }
+            --bg-primary: #050505;
+            --bg-secondary: #0a0a0a;
+            --bg-tertiary: #111111;
+            --bg-card: rgba(255, 255, 255, 0.02);
+            --bg-card-hover: rgba(255, 255, 255, 0.04);
+            --border-subtle: rgba(255, 255, 255, 0.06);
+            --border-medium: rgba(255, 255, 255, 0.1);
+            --border-strong: rgba(255, 255, 255, 0.15);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.6);
+            --text-tertiary: rgba(255, 255, 255, 0.35);
+            --text-muted: rgba(255, 255, 255, 0.2);
+            --accent: #ffffff;
+            --accent-dim: rgba(255, 255, 255, 0.5);
 
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.5);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.6);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.7);
+            --shadow-xl: 0 20px 60px rgba(0,0,0,0.8);
+        }
 
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-      overflow-x: hidden;
-      transition: background 0.4s, color 0.4s;
-    }
+        [data-theme="light"] {
+            --bg-primary: #f0f0f0;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #e8e8e8;
+            --bg-card: rgba(0, 0, 0, 0.02);
+            --bg-card-hover: rgba(0, 0, 0, 0.04);
+            --border-subtle: rgba(0, 0, 0, 0.06);
+            --border-medium: rgba(0, 0, 0, 0.1);
+            --border-strong: rgba(0, 0, 0, 0.15);
+            --text-primary: #0a0a0a;
+            --text-secondary: rgba(0, 0, 0, 0.7);
+            --text-tertiary: rgba(0, 0, 0, 0.45);
+            --text-muted: rgba(0, 0, 0, 0.3);
+            --accent: #0a0a0a;
+            --accent-dim: rgba(0, 0, 0, 0.5);
 
-    header {
-      background: var(--header-bg);
-      padding: 80px 20px 50px;
-      text-align: center;
-      color: #fff;
-      animation: fadeInDown 1.5s ease-in-out;
-      position: relative;
-    }
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.1);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+            --shadow-xl: 0 20px 60px rgba(0,0,0,0.15);
+        }
 
-    header h1 {
-      margin: 0;
-      font-size: 3em;
-      letter-spacing: 1px;
-      animation: slideInLeft 1s ease-out;
-    }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
 
-    header p {
-      font-size: 1.2em;
-      margin-top: 12px;
-      animation: slideInRight 1s ease-out;
-    }
+        body {
+            font-family: var(--font-primary);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background 0.8s cubic-bezier(0.4, 0, 0.2, 1), color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: none;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
 
-    #mode-toggle {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: none;
-      border: 2px solid #fff;
-      border-radius: 30px;
-      color: #fff;
-      font-size: 1em;
-      padding: 6px 14px;
-      cursor: pointer;
-      transition: background 0.3s, color 0.3s;
-    }
+        ::selection {
+            background: var(--text-primary);
+            color: var(--bg-primary);
+        }
 
-    #mode-toggle:hover {
-      background: rgba(255, 255, 255, 0.15);
-    }
+        /* Custom Cursor */
+        .cursor {
+            width: 10px;
+            height: 10px;
+            background: var(--text-primary);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 99999;
+            mix-blend-mode: difference;
+            transition: transform 0.15s ease-out, width 0.2s ease, height 0.2s ease;
+            box-shadow: 0 0 0 2px var(--text-primary);
+        }
+        .cursor.hover {
+            width: 48px;
+            height: 48px;
+            background: transparent;
+            border: 2px solid var(--text-primary);
+            box-shadow: 0 0 0 1px var(--text-primary), 0 0 20px rgba(0,0,0,0.1);
+            mix-blend-mode: difference;
+        }
+        .cursor-trail {
+            width: 6px;
+            height: 6px;
+            background: var(--text-muted);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 99998;
+            transition: transform 0.3s ease-out;
+            opacity: 0.6;
+        }
 
-    section {
-      max-width: 1000px;
-      margin: 50px auto;
-      background: var(--section-bg);
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.4s;
-      animation: fadeUp 1.2s ease-in-out;
-    }
+        /* Noise Overlay */
+        .noise-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+        }
 
-    section:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-    }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg-primary); }
+        ::-webkit-scrollbar-thumb { background: var(--border-medium); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--border-strong); }
 
-    h2 {
-      color: var(--accent-color);
-      border-left: 5px solid var(--accent-color);
-      padding-left: 12px;
-      margin-bottom: 20px;
-      font-size: 1.8em;
-      animation: bounceIn 1.4s;
-    }
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+        }
 
-    ul {
-      padding-left: 20px;
-    }
+        /* ========== NAVIGATION ========== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.25rem 2.5rem;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .nav.scrolled {
+            background: rgba(var(--bg-primary), 0.8);
+            backdrop-filter: blur(30px) saturate(150%);
+            -webkit-backdrop-filter: blur(30px) saturate(150%);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            text-decoration: none;
+            z-index: 1002;
+        }
+        .nav-logo span { color: var(--text-tertiary); font-weight: 400; }
 
-    ul li {
-      margin-bottom: 10px;
-      position: relative;
-      padding-left: 15px;
-      animation: fadeInLeft 1s;
-    }
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--text-tertiary);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            transition: color 0.4s ease;
+            position: relative;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            width: 0;
+            height: 1px;
+            background: var(--text-primary);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(-50%);
+        }
+        .nav-links a:hover::after { width: 100%; }
 
-    ul li::before {
-      content: "✔";
-      position: absolute;
-      left: 0;
-      color: #00aa66;
-    }
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--border-medium);
+            background: transparent;
+            color: var(--text-primary);
+            cursor: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            z-index: 1002;
+            position: relative;
+        }
+        .menu-toggle span {
+            display: block;
+            width: 18px;
+            height: 1.5px;
+            background: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
+        .menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-    .contact {
-      font-size: 1.1em;
-      margin-top: 20px;
-    }
+        .mobile-nav {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-primary);
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+        .mobile-nav.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .mobile-nav a {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+        .mobile-nav.active a {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .mobile-nav.active a:nth-child(1) { transition-delay: 0.1s; }
+        .mobile-nav.active a:nth-child(2) { transition-delay: 0.15s; }
+        .mobile-nav.active a:nth-child(3) { transition-delay: 0.2s; }
+        .mobile-nav.active a:nth-child(4) { transition-delay: 0.25s; }
+        .mobile-nav.active a:nth-child(5) { transition-delay: 0.3s; }
+        .mobile-nav.active a:nth-child(6) { transition-delay: 0.35s; }
 
-    .whatsapp-btn {
-      display: inline-block;
-      background: var(--btn-bg);
-      color: white;
-      padding: 14px 24px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.05em;
-      margin-top: 20px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-      transition: all 0.3s ease;
-      animation: pulse 2s infinite;
-    }
+        .theme-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--border-medium);
+            background: transparent;
+            color: var(--text-secondary);
+            cursor: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+            z-index: 1002;
+        }
+        .theme-toggle:hover {
+            border-color: var(--text-primary);
+            color: var(--text-primary);
+            transform: scale(1.1);
+        }
 
-    .whatsapp-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    }
+        /* ========== HERO ========== */
+        .hero {
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 8rem 1.5rem 4rem;
+        }
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(var(--border-subtle) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px);
+            background-size: 80px 80px;
+            opacity: 0.5;
+            mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+        }
+        .hero-spotlight {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+            pointer-events: none;
+            transition: transform 0.3s ease-out;
+            z-index: 0;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 900px;
+            width: 100%;
+        }
+        .hero-label {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .hero-label::before, .hero-label::after {
+            content: '';
+            width: 40px;
+            height: 1px;
+            background: var(--border-medium);
+        }
+        .hero-title {
+            font-size: clamp(2.5rem, 10vw, 6.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.04em;
+            line-height: 0.95;
+        }
+        .hero-title .line {
+            display: block;
+            overflow: hidden;
+        }
+        .hero-title .line span {
+            display: block;
+            transform: translateY(100%);
+            animation: reveal-up 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+        }
+        .hero-title .line:nth-child(2) span { animation-delay: 0.1s; }
+        @keyframes reveal-up {
+            to { transform: translateY(0); }
+        }
+        .hero-subtitle {
+            font-family: var(--font-mono);
+            font-size: clamp(0.65rem, 2vw, 0.9rem);
+            color: var(--text-tertiary);
+            margin-bottom: 2.5rem;
+            letter-spacing: 0.05em;
+            line-height: 1.8;
+        }
+        .hero-subtitle span {
+            color: var(--text-muted);
+            margin: 0 0.3rem;
+        }
+        .hero-desc {
+            font-size: clamp(0.9rem, 2vw, 1.05rem);
+            color: var(--text-secondary);
+            max-width: 550px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+            font-weight: 400;
+            padding: 0 0.5rem;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 0;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: none;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            min-width: 180px;
+        }
+        .btn-primary {
+            background: var(--text-primary);
+            color: var(--bg-primary);
+        }
+        .btn-primary:hover {
+            background: var(--text-secondary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border-medium);
+        }
+        .btn-secondary:hover {
+            border-color: var(--text-primary);
+            background: var(--bg-card-hover);
+            transform: translateY(-2px);
+        }
+        .btn .arrow { transition: transform 0.3s ease; }
+        .btn:hover .arrow { transform: translateX(4px); }
 
-    footer {
-      text-align: center;
-      margin: 60px 0 30px;
-      color: var(--footer-color);
-      font-size: 0.95em;
-      animation: fadeIn 2s;
-    }
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            animation: bounce 2s infinite;
+        }
+        .scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--border-medium), transparent);
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(8px); }
+        }
 
-    @keyframes fadeInDown {
-      from {opacity: 0; transform: translateY(-30px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
+        /* ========== SECTIONS ========== */
+        section {
+            padding: 6rem 1.5rem;
+            position: relative;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .section-header {
+            margin-bottom: 4rem;
+            position: relative;
+        }
+        .section-number {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .section-title {
+            font-size: clamp(2rem, 6vw, 4rem);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        .section-desc {
+            color: var(--text-secondary);
+            max-width: 500px;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            line-height: 1.7;
+        }
+        .section-line {
+            width: 60px;
+            height: 1px;
+            background: var(--border-strong);
+            margin-top: 2rem;
+        }
 
-    @keyframes fadeUp {
-      from {opacity: 0; transform: translateY(40px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
+        /* ========== ABOUT ========== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        .about-image {
+            position: relative;
+            aspect-ratio: 3/4;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-subtle);
+            overflow: hidden;
+            max-width: 400px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+        .about-image:hover img {
+            transform: scale(1.03);
+        }
+        .about-content { padding-top: 0; }
+        .about-content h3 {
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .about-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            line-height: 1.8;
+        }
+        .about-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+        .tag {
+            padding: 0.4rem 1rem;
+            background: transparent;
+            border: 1px solid var(--border-subtle);
+            border-radius: 0;
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
+            font-family: var(--font-mono);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.4s ease;
+        }
+        .tag:hover {
+            border-color: var(--text-primary);
+            color: var(--text-primary);
+            background: var(--bg-card-hover);
+        }
 
-    @keyframes slideInLeft {
-      from {opacity: 0; transform: translateX(-50px);}
-      to {opacity: 1; transform: translateX(0);}
-    }
+        /* ========== SKILLS ========== */
+        .skills-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        .skill-category { margin-bottom: 2.5rem; }
+        .skill-category-title {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.875rem 0;
+            border-bottom: 1px solid var(--border-subtle);
+            transition: all 0.3s ease;
+            gap: 1rem;
+        }
+        .skill-item:hover {
+            padding-left: 0.5rem;
+            border-bottom-color: var(--border-medium);
+        }
+        .skill-name {
+            font-size: clamp(0.85rem, 2vw, 0.95rem);
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        .skill-level {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .skill-bar-container { margin-top: 1.5rem; }
+        .skill-bar {
+            height: 2px;
+            background: var(--border-subtle);
+            margin-bottom: 1.25rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .skill-bar-fill {
+            height: 100%;
+            background: var(--text-primary);
+            width: 0;
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .skill-bar-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+        }
+        .skill-bar-label span:first-child {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        .skill-bar-label span:last-child {
+            font-family: var(--font-mono);
+            color: var(--text-muted);
+        }
 
-    @keyframes slideInRight {
-      from {opacity: 0; transform: translateX(50px);}
-      to {opacity: 1; transform: translateX(0);}
-    }
+        /* ========== LANGUAGES ========== */
+        .lang-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            background: var(--border-subtle);
+            margin-top: 3rem;
+        }
+        .lang-card {
+            background: var(--bg-primary);
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            transition: all 0.4s ease;
+        }
+        .lang-card:hover { background: var(--bg-card-hover); }
+        .lang-flag { font-size: 1.75rem; }
+        .lang-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+            font-weight: 600;
+        }
+        .lang-info p {
+            color: var(--text-tertiary);
+            font-size: 0.8rem;
+            font-family: var(--font-mono);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
 
-    @keyframes bounceIn {
-      0% {transform: scale(0.5); opacity: 0;}
-      60% {transform: scale(1.2); opacity: 1;}
-      100% {transform: scale(1);}
-    }
+        /* ========== SERVICES ========== */
+        .services-list {
+            display: flex;
+            flex-direction: column;
+            border-top: 1px solid var(--border-subtle);
+        }
+        .service-row {
+            display: grid;
+            grid-template-columns: 50px 1fr 60px;
+            align-items: center;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border-subtle);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: none;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-row::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 0;
+            background: var(--bg-card-hover);
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: -1;
+        }
+        .service-row:hover::before { width: 100%; }
+        .service-row:hover { padding-left: 0.75rem; }
+        .service-row:hover .service-number { color: var(--text-primary); }
+        .service-row:hover .service-name { color: var(--text-primary); }
+        .service-row:hover .service-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .service-number {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            transition: color 0.3s ease;
+        }
+        .service-name {
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            font-weight: 600;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+            font-family: var(--font-display);
+        }
+        .service-arrow {
+            text-align: right;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.4s ease;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+        }
 
-    @keyframes fadeInLeft {
-      from {opacity: 0; transform: translateX(-20px);}
-      to {opacity: 1; transform: translateX(0);}
-    }
+        /* ========== PHILOSOPHY ========== */
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            border: 1px solid var(--border-subtle);
+        }
+        .philosophy-item {
+            padding: 3rem 2rem;
+            border-right: 1px solid var(--border-subtle);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .philosophy-item:last-child { border-right: none; }
+        .philosophy-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--text-primary);
+            transform: scaleX(0);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .philosophy-item:hover::before { transform: scaleX(1); }
+        .philosophy-item:hover { background: var(--bg-card-hover); }
+        .philosophy-number {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        .philosophy-icon {
+            font-size: 1.75rem;
+            margin-bottom: 1.25rem;
+            display: block;
+            opacity: 0.6;
+        }
+        .philosophy-item h3 {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+        .philosophy-item p {
+            color: var(--text-secondary);
+            font-size: clamp(0.85rem, 2vw, 0.9rem);
+            line-height: 1.7;
+        }
 
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
+        /* ========== CONTACT ========== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border: 1px solid var(--border-subtle);
+            margin-top: 3rem;
+        }
+        .contact-card {
+            padding: 2.5rem;
+            border-right: 1px solid var(--border-subtle);
+            transition: all 0.4s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .contact-card:last-child { border-right: none; }
+        .contact-card:hover { background: var(--bg-card-hover); }
+        .contact-card:hover .contact-label { color: var(--text-primary); }
+        .contact-card:hover .contact-value { color: var(--text-primary); }
+        .contact-label {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            display: block;
+            transition: color 0.3s ease;
+        }
+        .contact-value {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            font-weight: 600;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+            word-break: break-word;
+            line-height: 1.4;
+        }
+        .contact-icon {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            opacity: 0.5;
+        }
 
-    @keyframes pulse {
-      0%, 100% {transform: scale(1);}
-      50% {transform: scale(1.05);}
-    }
+        /* ========== FOOTER ========== */
+        .footer {
+            padding: 4rem 1.5rem 2rem;
+            border-top: 1px solid var(--border-subtle);
+            position: relative;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+        }
+        .footer-brand h2 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .footer-brand p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            max-width: 300px;
+        }
+        .footer-col h4 {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+        }
+        .footer-col a {
+            display: block;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 0.6rem;
+            transition: color 0.3s ease;
+        }
+        .footer-col a:hover { color: var(--text-primary); }
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-subtle);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .footer-copy {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.2em;
-      }
+        /* ========== REVEAL & BLUR ========== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
 
-      section {
-        padding: 25px;
-        margin: 30px 15px;
-      }
+        .scroll-blur {
+            transition: filter 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+        }
+        .scroll-blur.scrolling {
+            filter: blur(2px);
+            opacity: 0.85;
+        }
+        .scroll-blur-fast {
+            filter: blur(3px);
+            opacity: 0.7;
+        }
 
-      .whatsapp-btn {
-        font-size: 0.95em;
-        padding: 10px 18px;
-      }
-    }
-  </style>
+        .section-divider {
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 1px;
+            background: var(--border-subtle);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1024px) {
+            .about-grid { gap: 3rem; }
+            .skills-layout { gap: 2rem; }
+            .philosophy-item { padding: 2.5rem 1.5rem; }
+        }
+
+        @media (max-width: 768px) {
+            body { cursor: auto; }
+            .cursor, .cursor-trail { display: none !important; }
+
+            .nav { padding: 1rem 1.25rem; }
+            .nav-links { display: none; }
+            .menu-toggle { display: flex; }
+
+            .hero { padding: 7rem 1rem 3rem; min-height: 100dvh; }
+            .hero-label { font-size: 0.6rem; gap: 0.75rem; }
+            .hero-label::before, .hero-label::after { width: 24px; }
+            .hero-subtitle { font-size: 0.65rem; }
+            .hero-desc { padding: 0; }
+            .hero-buttons { flex-direction: column; align-items: center; width: 100%; }
+            .btn { width: 100%; max-width: 280px; padding: 0.875rem 1.5rem; }
+            .scroll-indicator { display: none; }
+
+            section { padding: 4rem 1rem; }
+            .section-header { margin-bottom: 2.5rem; }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .about-image {
+                max-width: 280px;
+                aspect-ratio: 1/1;
+            }
+            .about-content h3 { margin-bottom: 1rem; }
+
+            .skills-layout {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .skill-category { margin-bottom: 2rem; }
+            .skill-item { padding: 0.75rem 0; }
+
+            .service-row {
+                grid-template-columns: 36px 1fr;
+                padding: 1.25rem 0;
+            }
+            .service-arrow { display: none; }
+
+            .philosophy-grid { grid-template-columns: 1fr; }
+            .philosophy-item {
+                border-right: none;
+                border-bottom: 1px solid var(--border-subtle);
+                padding: 2rem 1.5rem;
+            }
+            .philosophy-item:last-child { border-bottom: none; }
+
+            .contact-grid { grid-template-columns: 1fr; }
+            .contact-card {
+                border-right: none;
+                border-bottom: 1px solid var(--border-subtle);
+                padding: 2rem 1.5rem;
+            }
+            .contact-card:last-child { border-bottom: none; }
+
+            .lang-grid { grid-template-columns: 1fr; }
+            .lang-card { padding: 1.5rem; }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title { font-size: 2.2rem; }
+            .section-title { font-size: 1.75rem; }
+            .about-image { max-width: 220px; }
+            .service-name { font-size: 1rem; }
+            .contact-value { font-size: 0.9rem; }
+        }
+
+        @media (min-width: 769px) {
+            .mobile-nav { display: none !important; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <button id="mode-toggle">🌙</button>
-    <h1>Amr Mohamed Shaaban</h1>
-    <p>High School Student from Egypt | Graphic Designer & Translator & Programmer</p>
-  </header>
+    <div class="noise-overlay"></div>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-trail" id="cursorTrail"></div>
 
-  <section>
-    <h2>About Me</h2>
-    <p>I’m a dedicated high school student from Egypt, passionate about graphic design and programming in html ,css ,php ,JavaScript . I create all kinds of static graphic designs with top quality and creativity. Please note that I do not offer motion graphics or video editing services. In addition, I work as a full professional translator with high accuracy and attention to detail , I offer top-quality website programming services. .</p>
-  </section>
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#home" onclick="closeMenu()">Home</a>
+        <a href="#about" onclick="closeMenu()">About</a>
+        <a href="#skills" onclick="closeMenu()">Skills</a>
+        <a href="#services" onclick="closeMenu()">Services</a>
+        <a href="#philosophy" onclick="closeMenu()">Philosophy</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+    </div>
 
-  <section>
-    <h2>Design Software I Use</h2>
-    <ul>
-      <li>Adobe Photoshop</li>
-      <li>Adobe Illustrator</li>
-      <li>Adobe After Effects</li>
-      <li>AI-based Design Tools</li>
-    </ul>
-  </section>
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">Amr<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#philosophy">Philosophy</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div style="display:flex;align-items:center;gap:0.75rem;">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
 
-  <section>
-    <h2>Contact</h2>
-    <p class="contact">You can reach me directly on WhatsApp:</p>
-    <a href="https://wa.me/201159455350" class="whatsapp-btn" target="_blank">📞 01159455350 (Available on WhatsApp)</a>
-    <p class="contact">Email: amrsario2024@gmail.com
-</p>
-  </section>
+    <section class="hero" id="home">
+        <div class="hero-grid"></div>
+        <div class="hero-spotlight" id="spotlight"></div>
 
-  <footer>
-    <p>Designed with passion by Amr Mohamed</p>
-  </footer>
+        <div class="hero-content scroll-blur">
+            <div class="hero-label">Portfolio 2026</div>
+            <h1 class="hero-title">
+                <div class="line"><span>Amr Mohamed</span></div>
+                <div class="line"><span>Shaaban</span></div>
+            </h1>
+            <p class="hero-subtitle">
+                Full Stack Developer <span>/</span> Graphic Designer <span>/</span> IT Support <span>/</span> Microsoft Office
+            </p>
+            <p class="hero-desc">
+                I transform ideas into modern digital experiences by combining programming, 
+                design, and technical expertise. Creating products that are beautiful, fast, and reliable.
+            </p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn btn-primary">
+                    <span>View Work</span>
+                    <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <span>Get in Touch</span>
+                </a>
+            </div>
+        </div>
 
-  <script>
-    const toggle = document.getElementById('mode-toggle');
-    toggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      toggle.textContent = document.body.classList.contains('dark-mode') ? '🌞' : '🌙';
-    });
-  </script>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-number">01</span>
+                <h2 class="section-title">About Me</h2>
+                <p class="section-desc">A passionate creator dedicated to building exceptional digital experiences with precision and creativity.</p>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="about-grid scroll-blur">
+                <div class="about-image reveal">
+                    <img src="profile.jpg" alt="Amr Mohamed Shaaban">
+                </div>
+                <div class="about-content reveal reveal-delay-2">
+                    <h3>Building the future, one pixel at a time</h3>
+                    <p>
+                        I am a high school student with an unwavering passion for technology and creative problem-solving. 
+                        What started as curiosity quickly evolved into a deep commitment to mastering the digital craft.
+                    </p>
+                    <p>
+                        As a fast learner and detail-oriented thinker, I thrive on challenges that push my boundaries. 
+                        I love solving difficult technical problems and building complete digital solutions from idea to deployment.
+                    </p>
+                    <div class="about-tags">
+                        <span class="tag">High School Student</span>
+                        <span class="tag">Fast Learner</span>
+                        <span class="tag">Creative Thinker</span>
+                        <span class="tag">Detail-Oriented</span>
+                        <span class="tag">Problem Solver</span>
+                        <span class="tag">Full Stack</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section id="skills" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Skills & Expertise</h2>
+                <p class="section-desc">A diverse skill set spanning development, design, and technical support.</p>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="skills-layout scroll-blur">
+                <div class="reveal">
+                    <div class="skill-category">
+                        <div class="skill-category-title">Programming</div>
+                        <div class="skill-item"><span class="skill-name">HTML / CSS</span><span class="skill-level">Expert</span></div>
+                        <div class="skill-item"><span class="skill-name">PHP</span><span class="skill-level">Advanced</span></div>
+                        <div class="skill-item"><span class="skill-name">Python</span><span class="skill-level">Advanced</span></div>
+                        <div class="skill-item"><span class="skill-name">Java</span><span class="skill-level">Intermediate</span></div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-category-title">Graphic Design</div>
+                        <div class="skill-item"><span class="skill-name">Adobe Photoshop</span><span class="skill-level">Advanced</span></div>
+                        <div class="skill-item"><span class="skill-name">Adobe Illustrator</span><span class="skill-level">Advanced</span></div>
+                        <div class="skill-item"><span class="skill-name">Adobe After Effects</span><span class="skill-level">Intermediate</span></div>
+                        <div class="skill-item"><span class="skill-name">AI Image Generation</span><span class="skill-level">Advanced</span></div>
+                    </div>
+                </div>
+                <div class="reveal reveal-delay-2">
+                    <div class="skill-category">
+                        <div class="skill-category-title">Microsoft Office</div>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar-label"><span>Word</span><span>98%</span></div>
+                            <div class="skill-bar"><div class="skill-bar-fill" data-width="98%"></div></div>
+                            <div class="skill-bar-label"><span>Excel</span><span>94%</span></div>
+                            <div class="skill-bar"><div class="skill-bar-fill" data-width="94%"></div></div>
+                            <div class="skill-bar-label"><span>PowerPoint</span><span>86%</span></div>
+                            <div class="skill-bar"><div class="skill-bar-fill" data-width="86%"></div></div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-category-title">IT Support</div>
+                        <div class="skill-item"><span class="skill-name">Hardware Troubleshooting</span><span class="skill-level">Expert</span></div>
+                        <div class="skill-item"><span class="skill-name">Software Troubleshooting</span><span class="skill-level">Expert</span></div>
+                        <div class="skill-item"><span class="skill-name">Windows Installation</span><span class="skill-level">Expert</span></div>
+                        <div class="skill-item"><span class="skill-name">Network Troubleshooting</span><span class="skill-level">Advanced</span></div>
+                        <p style="margin-top: 1.5rem; color: var(--text-tertiary); font-size: 0.85rem; line-height: 1.7;">
+                            I diagnose and solve computer problems quickly with precision and efficiency.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lang-grid reveal">
+                <div class="lang-card">
+                    <span class="lang-flag">🇪🇬</span>
+                    <div class="lang-info">
+                        <h4>Arabic</h4>
+                        <p>Native Speaker</p>
+                    </div>
+                </div>
+                <div class="lang-card">
+                    <span class="lang-flag">🇬🇧</span>
+                    <div class="lang-info">
+                        <h4>English</h4>
+                        <p>Fluent</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section id="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Services</h2>
+                <p class="section-desc">Comprehensive digital solutions tailored to your needs.</p>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="services-list reveal scroll-blur">
+                <div class="service-row">
+                    <span class="service-number">01</span>
+                    <span class="service-name">Website Development</span>
+                    <span class="service-arrow">→</span>
+                </div>
+                <div class="service-row">
+                    <span class="service-number">02</span>
+                    <span class="service-name">Mobile App Development</span>
+                    <span class="service-arrow">→</span>
+                </div>
+                <div class="service-row">
+                    <span class="service-number">03</span>
+                    <span class="service-name">Graphic Design</span>
+                    <span class="service-arrow">→</span>
+                </div>
+                <div class="service-row">
+                    <span class="service-number">04</span>
+                    <span class="service-name">Brand Identity</span>
+                    <span class="service-arrow">→</span>
+                </div>
+                <div class="service-row">
+                    <span class="service-number">05</span>
+                    <span class="service-name">AI Image Generation</span>
+                    <span class="service-arrow">→</span>
+                </div>
+                <div class="service-row">
+                    <span class="service-number">06</span>
+                    <span class="service-name">UI / UX Design</span>
+                    <span class="service-arrow">→</span>
+                </div>
+                <div class="service-row">
+                    <span class="service-number">07</span>
+                    <span class="service-name">IT Support</span>
+                    <span class="service-arrow">→</span>
+                </div>
+                <div class="service-row">
+                    <span class="service-number">08</span>
+                    <span class="service-name">Technical Consultation</span>
+                    <span class="service-arrow">→</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section id="philosophy" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-number">04</span>
+                <h2 class="section-title">Philosophy</h2>
+                <p class="section-desc">The perfect fusion of three core disciplines.</p>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="philosophy-grid reveal scroll-blur">
+                <div class="philosophy-item">
+                    <span class="philosophy-number">01</span>
+                    <span class="philosophy-icon">💻</span>
+                    <h3>Programming</h3>
+                    <p>Writing clean, efficient, and scalable code that powers robust digital solutions. Every line is crafted with purpose and precision.</p>
+                </div>
+                <div class="philosophy-item">
+                    <span class="philosophy-number">02</span>
+                    <span class="philosophy-icon">🎨</span>
+                    <h3>Design</h3>
+                    <p>Creating visually stunning interfaces and experiences that captivate users and communicate brand stories effectively.</p>
+                </div>
+                <div class="philosophy-item">
+                    <span class="philosophy-number">03</span>
+                    <span class="philosophy-icon">🔧</span>
+                    <h3>Technical Support</h3>
+                    <p>Ensuring systems run smoothly with expert troubleshooting, maintenance, and optimization for peak performance.</p>
+                </div>
+            </div>
+
+            <p class="reveal" style="text-align: center; max-width: 600px; margin: 4rem auto 0; font-size: clamp(0.9rem, 2vw, 1.1rem); color: var(--text-secondary); line-height: 1.8; font-style: italic; padding: 0 1rem;">
+                "By combining programming, design, and technical support, I build complete digital experiences that are not only visually stunning but also functionally flawless."
+            </p>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-number">05</span>
+                <h2 class="section-title">Contact</h2>
+                <p class="section-desc">Let's work together. Reach out through any of the channels below.</p>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="contact-grid reveal scroll-blur">
+                <a href="https://wa.me/201159455350" target="_blank" class="contact-card">
+                    <span class="contact-icon">💬</span>
+                    <span class="contact-label">WhatsApp</span>
+                    <span class="contact-value">+20 115 945 5350</span>
+                </a>
+                <a href="mailto:amr.eltohami.business@gmail.com" class="contact-card">
+                    <span class="contact-icon">✉️</span>
+                    <span class="contact-label">Email</span>
+                    <span class="contact-value">amr.eltohami.business@gmail.com</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h2>Amr Mohamed Shaaban</h2>
+                <p>Building Modern Digital Experiences. Transforming ideas into reality through code, design, and technical excellence.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#services">Services</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="https://wa.me/201159455350" target="_blank">WhatsApp</a>
+                <a href="mailto:amr.eltohami.business@gmail.com">Email</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span class="footer-copy">© 2026 Amr Mohamed Shaaban</span>
+            <span class="footer-copy">Crafted with passion</span>
+        </div>
+    </footer>
+
+    <script>
+        // ===== Custom Cursor =====
+        const cursor = document.getElementById('cursor');
+        const cursorTrail = document.getElementById('cursorTrail');
+        let cursorX = 0, cursorY = 0;
+        let trailX = 0, trailY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            cursorX = e.clientX;
+            cursorY = e.clientY;
+            cursor.style.left = cursorX - 5 + 'px';
+            cursor.style.top = cursorY - 5 + 'px';
+        });
+
+        function animateTrail() {
+            trailX += (cursorX - trailX) * 0.15;
+            trailY += (cursorY - trailY) * 0.15;
+            cursorTrail.style.left = trailX - 3 + 'px';
+            cursorTrail.style.top = trailY - 3 + 'px';
+            requestAnimationFrame(animateTrail);
+        }
+        animateTrail();
+
+        document.querySelectorAll('a, button, .service-row, .tag, .contact-card').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        });
+
+        // ===== Spotlight Effect =====
+        const spotlight = document.getElementById('spotlight');
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX - 300;
+            const y = e.clientY - 300;
+            spotlight.style.transform = `translate(${x}px, ${y}px)`;
+        });
+
+        // ===== Mobile Menu =====
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileNav = document.getElementById('mobileNav');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        });
+
+        function closeMenu() {
+            menuToggle.classList.remove('active');
+            mobileNav.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // ===== Theme Toggle =====
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        themeToggle.addEventListener('click', () => {
+            const current = html.getAttribute('data-theme');
+            html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+            localStorage.setItem('theme', html.getAttribute('data-theme'));
+        });
+        const saved = localStorage.getItem('theme') || 'dark';
+        html.setAttribute('data-theme', saved);
+
+        // ===== Scroll Reveal =====
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // ===== Skill Bars =====
+        const skillBars = document.querySelectorAll('.skill-bar-fill');
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.width = entry.target.getAttribute('data-width');
+                }
+            });
+        }, { threshold: 0.3 });
+        skillBars.forEach(bar => skillObserver.observe(bar));
+
+        // ===== Nav Scroll Effect =====
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        }, { passive: true });
+
+        // ===== Scroll Blur =====
+        const scrollBlurElements = document.querySelectorAll('.scroll-blur');
+        let scrollTimeout;
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            const scrollSpeed = Math.abs(currentScrollY - lastScrollY);
+
+            scrollBlurElements.forEach(el => {
+                if (scrollSpeed > 15) {
+                    el.classList.add('scroll-blur-fast');
+                    el.classList.remove('scrolling');
+                } else if (scrollSpeed > 5) {
+                    el.classList.add('scrolling');
+                    el.classList.remove('scroll-blur-fast');
+                }
+            });
+
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                scrollBlurElements.forEach(el => {
+                    el.classList.remove('scrolling', 'scroll-blur-fast');
+                });
+            }, 150);
+
+            lastScrollY = currentScrollY;
+        }, { passive: true });
+
+        // ===== Smooth Scroll =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
